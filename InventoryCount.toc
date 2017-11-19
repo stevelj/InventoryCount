@@ -1,0 +1,8 @@
+## Interface: 70300
+## Title: Inventory Count
+## Author: Conjurah
+## Version: 0.1
+## Notes:
+## SavedVariablesPerCharacter: limits
+
+InventoryCount.lua
