@@ -68,6 +68,11 @@ local function createItem(name, limit, count)
   return {name=name, limit=limit, count=count}
 end
 
+local function updateWidget(name, count)
+  widgets[name]:GetItem().count = count
+  widgets[name]:Update()
+end
+
 function frame:Load()
   local previous
   local counts = GetCounts()
@@ -83,6 +88,8 @@ function frame:Load()
       end      
       widgets[key] = itemFrame
       previous = itemFrame
+    else
+      updateWidget(key, counts[key])
     end
   end
   self:RegisterEvent(BAG_UPDATE)
@@ -115,8 +122,7 @@ end
 function InvC.BAG_UPDATE(...)
   local counts = GetCounts()
   for key,value in pairs(counts) do
-    widgets[key]:GetItem().count = value
-    widgets[key]:Update()
+    updateWidget(key, value)
   end
 end
 
