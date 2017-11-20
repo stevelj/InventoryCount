@@ -1,8 +1,12 @@
 ## Interface: 70300
 ## Title: Inventory Count
 ## Author: Conjurah
-## Version: 1.0
+## Version: 1.1
 ## Notes:
 ## SavedVariablesPerCharacter: limits
 
+## X-License: MIT/X
+
+Utils.lua
+objects.xml
 InventoryCount.lua
